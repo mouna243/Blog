@@ -8,13 +8,12 @@ class Controller
     {
         extract($data);
 
-        $viewFile = __DIR__ . '/../Views/pages/' . $view . '.php';
-        $layoutFile = __DIR__ . '/../Views/layouts/main.php';
+        $viewFile = __DIR__ . '/../../Views/' . $view . '.php';
 
         if (!file_exists($viewFile)) {
             throw new \Exception("View $view not found");
         }
 
-        require $layoutFile;
+        require $viewFile;
     }
 }
